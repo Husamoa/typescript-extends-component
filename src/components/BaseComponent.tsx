@@ -6,7 +6,7 @@ export interface IBaseComponentProps {
     pure? : false; //Jeśli komponent jest typu 'pure' to aktualizujemy go tylko jak zmieni się 'props' lub 'state'
 }
 
-export default class BaseComponent<P extends {}, S extends {}> extends React.Component<IBaseComponentProps, S> {
+export default class BaseComponent<P extends IBaseComponentProps, S extends {}> extends React.Component<P, S> {
 
     public static defaultProps = {
         classPrefix : null,
